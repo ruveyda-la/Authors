@@ -43,12 +43,14 @@ const Update= () => {
         .catch((err) => console.log(err))
     },[id])
     return (
+        
         <div className='container' style={{width:"600px", marginTop:"100px"}}>
+        
             <div style={{display:"flex",justifyContent:"space-between",margin:"10px"}}>
             <h5>Update Author</h5>
             <p><Link to="/authors">Dashboard</Link></p>
             </div>
-            {errors && errors.map((item,idx)=>(
+                {errors && errors.map((item,idx)=>(
                 <p key={idx} onClose={()=> setErrors([])} style={{color:"red"}}>{item}</p>
             ))}
             <form onSubmit={submitHandler} >
@@ -57,7 +59,10 @@ const Update= () => {
                 <Link to="/authors" className="btn btn-danger">Cancel</Link>
                 <button type="submit" className="btn btn-info">Update</button>
             </form>
+            
         </div>
+    
+        
     )
 }
 export default Update
